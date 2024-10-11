@@ -64,11 +64,10 @@ def bot(history: list):
         #print('')
         if chunk.choices and chunk.choices[0].delta.content:
             print(chunk.choices[0].delta.content)
-            #chunk_message = chunk.choices[0].delta.content  # extract the message
-            #collected_messages.append(chunk_message)  # save the message
-            #print(f"Message received {chunk_time:.2f} seconds after request: {chunk_message}")  # print the delay and text
+            chunk_message = chunk.choices[0].delta.content  # extract the message
+            collected_messages.append(chunk_message)  # save the message
+            print(f"Message received {chunk_time:.2f} seconds after request: {chunk_message}")  # print the delay and text
             print(f"Message received {chunk_time:.2f} seconds after request: {chunk.choices[0].delta.content}")  # print the delay and text
-            #history[-1]["content"] += chunk.choices[0].delta.content
             history[-1]["content"] += chunk.choices[0].delta.content
 
 
